@@ -11,6 +11,7 @@ public abstract class Product {
 
     private final String name;
     private final double price;
+
     public abstract double applyDiscount();
 
 }

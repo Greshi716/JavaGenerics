@@ -11,16 +11,16 @@ import EcommerceShopping.product.ProductFactory;
 public class main {
 
     public static void main(String[] args) {
-        // Step 1: Authentication
+
         Authenticator authenticator = new BasicAuthAuthenticator();
         BasicAuthCredentials credentials = new BasicAuthCredentials("basicUser", "validPassword");
 
         if (!authenticator.authenticate(credentials)) {
-            System.out.println("❌ Authentication failed!");
+            System.out.println("Authentication failed!");
             return;
         }
 
-        System.out.println("✅ Authentication successful!");
+        System.out.println("Authentication successful!");
 
         // Step 2: Create products
         ProductFactory productFactory = new ProductFactory();
@@ -36,7 +36,6 @@ public class main {
                 .map(p -> (ClothingProduct) p)
                 .forEach(ClothingProduct::tryOn);
 
-        Authenticator auth = new BasicAuthAuthenticator();
     }
 
 
